@@ -1,7 +1,8 @@
 FROM debian:latest
 
 RUN echo "deb http://http.us.debian.org/debian unstable main" > /etc/apt/sources.list && \
-    apt-get update && apt-get install -y vim-nox git curl ca-certificates silversearcher-ag mercurial exuberant-ctags ack-grep --no-install-recommends
+    apt-get update && apt-get install -y vim-nox git curl ca-certificates silversearcher-ag mercurial exuberant-ctags ack-grep python-pip --no-install-recommends && \
+    pip install isort
 
 RUN git clone git://github.com/7kfpun/.vim.git ~/.vim/
 
